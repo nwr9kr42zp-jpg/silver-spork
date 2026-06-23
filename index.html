@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Онлайн дүкөн</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo-box">
+    <img src="images/logo.webp" class="logo">
+    <h1>Жашылчалар жана жемиштер</h1>
+  </div>
+  <p>Биздин дүкөнгө кош келиңиз!</p>
+</header>
+
+<nav>
+<a href="index.html">Башкы</a>
+<a href="vegetables.html">Жашылчалар</a>
+<a href="fruits.html">Жемиштер</a>
+<a href="cart.html">Себет</a>
+<a href="order.html">Заказ</a>
+<a href="login.html">Кирүү</a>
+<a href="admin.html">Админ</a>
+</nav>
+
+<!-- 📊 СТАТИСТИКА -->
+<section class="stats">
+  <div>👥 1000+ кардар</div>
+  <div>🥕 50+ товар</div>
+  <div>🚚 24/7 доставка</div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+<h2>🥕 Табигый жана жаңы азыктар</h2>
+<p>Эң сапаттуу продукция</p>
+</section>
+
+<!-- 🎯 КАТЕГОРИЯ -->
+<section class="categories">
+  <a href="vegetables.html" class="cat">🥕 Жашылчалар</a>
+  <a href="fruits.html" class="cat">🍎 Жемиштер</a>
+</section>
+
+<!-- 🔥 АКЦИЯ -->
+<section class="sale">
+  <h2>🔥 Бүгүн -20% СКИДКА!</h2>
+  <p id="timer"></p>
+</section>
+
+<!-- 🛒 ТОВАРЛАР -->
+<h2>Популярдуу товарлар</h2>
+
+<div class="container">
+
+<div class="card">
+<img src="images/apple.webp">
+<h3>Алма</h3>
+<p>100 сом</p>
+<button onclick="addToCart('Алма',100)">Кошуу</button>
+</div>
+
+<div class="card">
+<img src="images/banana.webp">
+<h3>Банан</h3>
+<p>120 сом</p>
+<button onclick="addToCart('Банан',120)">Кошуу</button>
+</div>
+
+<div class="card">
+<img src="images/tomato.webp">
+<h3>Помидор</h3>
+<p>80 сом</p>
+<button onclick="addToCart('Помидор',80)">Кошуу</button>
+</div>
+
+</div>
+
+<!-- 🔔 уведомление -->
+<div id="notif" class="notif"></div>
+
+<footer class="footer">
+    <h2>Тема: «Жашылчалар жана Жемиштер онлайн дүкөнү»</h2>
+    <p><strong>Аткарган:</strong> Смадияров Сыймык Даниярович</p>
+    <p><strong>Жетекчи:</strong> Маманова Б.А.</p>
+    <p><strong>Кеңешчи:</strong> Абдуллаев И.К.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

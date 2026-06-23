@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header><h1>Админ панель</h1></header>
+
+<div class="container">
+<form onsubmit="addProduct(event)">
+<input type="text" id="name" placeholder="Аты"><br><br>
+<input type="number" id="price" placeholder="Баасы"><br><br>
+<input type="text" id="img" placeholder="images/apple.webp"><br><br>
+<button>Кошуу</button>
+</form>
+</div>
+
+<h2>Заказдар</h2>
+<div id="orders"></div>
+
+<script>
+function addProduct(e){
+e.preventDefault();
+
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+products.push({
+name: document.getElementById("name").value,
+price: document.getElementById("price").value,
+img: document.getElementById("img").value
+});
+
+localStorage.setItem("products", JSON.stringify(products));
+alert("Кошулду!");
+}
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+let div = document.getElementById("orders");
+
+orders.forEach(o=>{
+div.innerHTML += `<p>${o.name} - ${o.phone}</p>`;
+});
+</script>
+
+</body>
+</html>

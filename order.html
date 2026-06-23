@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+<header><h1>Заказ берүү</h1></header>
+
+<div class="container">
+<form onsubmit="sendOrder(event)">
+<input type="text" placeholder="Атыңыз" required><br><br>
+<input type="text" placeholder="Телефон" required><br><br>
+
+<button type="submit">Жиберүү</button>
+<br><br>
+<button type="button" onclick="payNow()">💳 Онлайн төлөм</button>
+
+</form>
+</div>
+
+<script>
+const firebaseConfig = {
+  apiKey: "XXXX",
+  authDomain: "XXXX",
+  projectId: "XXXX"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+function sendOrder(e){
+  e.preventDefault();
+
+  let inputs = document.querySelectorAll("input");
+
+  db.collection("orders").add({
+    name: inputs[0].value,
+    phone: inputs[1].value
+  });
+
+  alert("Firebase'ге сакталды!");
+}
+
+function payNow(){
+  alert("Төлөм ийгиликтүү!");
+}
+</script>
+
+</body>
+</html>
